@@ -1,10 +1,10 @@
 package com.saltserv.commandbus.base
 
-import android.content.res.loader.ResourcesProvider
 import androidx.lifecycle.ViewModel
 import com.saltserv.commandbus.CloseScreen
 import com.saltserv.commandbus.ViewModelCommand
 import com.saltserv.commandbus.logger.LoggerFactory
+import com.saltserv.commandbus.util.ResourcesProvider
 import io.reactivex.*
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
