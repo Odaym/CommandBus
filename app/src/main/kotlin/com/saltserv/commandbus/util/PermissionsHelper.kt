@@ -1,4 +1,4 @@
-package com.saltserv.commandbus.permissions
+package com.saltserv.commandbus.util
 
 import android.content.Context
 import android.content.pm.PackageManager
