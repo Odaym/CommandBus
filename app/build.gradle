@@ -9,6 +9,8 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+        debug.java.srcDirs += 'src/debugAndStaging/kotlin'
+        release.java.srcDirs += 'src/release/kotlin'
     }
 
     defaultConfig {
@@ -55,6 +57,6 @@ dependencies {
     // Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    // Firebase Auth
+    // Firebase
     implementation 'com.google.firebase:firebase-auth:20.0.4'
 }

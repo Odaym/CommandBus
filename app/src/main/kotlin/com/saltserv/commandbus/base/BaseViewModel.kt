@@ -19,7 +19,8 @@ abstract class BaseViewModel(dependencies: Dependencies) : ViewModel() {
 
     private val subscriptions = CompositeDisposable()
 
-    private val commandsSubject: io.reactivex.subjects.Subject<ViewModelCommand> = PublishSubject.create()
+    private val commandsSubject: io.reactivex.subjects.Subject<ViewModelCommand> =
+        PublishSubject.create()
     val commands: Observable<ViewModelCommand> = commandsSubject.hide()
 
     open fun onBackButtonClicked() = emitCommand(CloseScreen)

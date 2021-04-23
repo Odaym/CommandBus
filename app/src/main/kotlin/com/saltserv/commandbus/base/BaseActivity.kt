@@ -7,7 +7,10 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.saltserv.commandbus.*
+import com.saltserv.commandbus.CloseKeyboard
+import com.saltserv.commandbus.CloseScreen
+import com.saltserv.commandbus.ToastCommand
+import com.saltserv.commandbus.ViewModelCommand
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import org.koin.android.ext.android.inject
