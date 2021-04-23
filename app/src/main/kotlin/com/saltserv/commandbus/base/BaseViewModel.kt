@@ -3,7 +3,6 @@ package com.saltserv.commandbus.base
 import androidx.lifecycle.ViewModel
 import com.saltserv.commandbus.CloseScreen
 import com.saltserv.commandbus.ViewModelCommand
-import com.saltserv.commandbus.logger.LoggerFactory
 import com.saltserv.commandbus.util.ResourcesProvider
 import io.reactivex.*
 import io.reactivex.disposables.CompositeDisposable
@@ -11,9 +10,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.subjects.PublishSubject
 
 abstract class BaseViewModel(dependencies: Dependencies) : ViewModel() {
-
     protected val resourcesProvider = dependencies.resourceProvider
-    protected val logger = dependencies.loggerFactory.makeLogger(javaClass)
     protected val ioScheduler = dependencies.ioScheduler
     protected val uiScheduler = dependencies.uiScheduler
 
@@ -92,7 +89,6 @@ abstract class BaseViewModel(dependencies: Dependencies) : ViewModel() {
 
     data class Dependencies(
         val resourceProvider: ResourcesProvider,
-        val loggerFactory: LoggerFactory,
         val ioScheduler: Scheduler,
         val uiScheduler: Scheduler
     )
