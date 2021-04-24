@@ -25,7 +25,7 @@ interface ResourcesProvider {
     fun getDimen(@DimenRes dimenId: Int): Int
 }
 
-internal class ResourcesProviderImpl(private val context: Context) : ResourcesProvider {
+class ResourcesProviderImpl(private val context: Context) : ResourcesProvider {
 
     override fun getString(stringId: Int): String = context.getString(stringId)
 

@@ -8,7 +8,7 @@ interface NetworkAvailabilityChecker {
     val isConnectedToInternet: Boolean
 }
 
-internal class NetworkAvailabilityCheckerImpl(context: Context) :
+class NetworkAvailabilityCheckerImpl(context: Context) :
     NetworkAvailabilityChecker {
 
     private val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
