@@ -8,6 +8,7 @@ import io.reactivex.*
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.subjects.PublishSubject
+import io.reactivex.subjects.Subject
 
 abstract class BaseViewModel(dependencies: Dependencies) : ViewModel() {
     protected val resourcesProvider = dependencies.resourceProvider
@@ -16,8 +17,7 @@ abstract class BaseViewModel(dependencies: Dependencies) : ViewModel() {
 
     private val subscriptions = CompositeDisposable()
 
-    private val commandsSubject: io.reactivex.subjects.Subject<ViewModelCommand> =
-        PublishSubject.create()
+    private val commandsSubject: Subject<ViewModelCommand> = PublishSubject.create()
     val commands: Observable<ViewModelCommand> = commandsSubject.hide()
 
     open fun onBackButtonClicked() = emitCommand(CloseScreen)
