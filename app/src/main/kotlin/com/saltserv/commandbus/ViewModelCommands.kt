@@ -10,12 +10,6 @@ object OpenMainScreen : ViewModelCommand
 
 object OpenGatewayScreen : ViewModelCommand
 
-object OpenCreateBookScreen : ViewModelCommand
-
-object OpenBarcodeScannerActivity : ViewModelCommand
-
-object ShowForgotPasswordDialog : ViewModelCommand
-
 data class ToastCommand(val message: String) : ViewModelCommand
 
 
