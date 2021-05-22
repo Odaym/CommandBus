@@ -10,6 +10,6 @@ object OpenMainScreen : ViewModelCommand
 
 object OpenGatewayScreen : ViewModelCommand
 
-data class ToastCommand(val message: String) : ViewModelCommand
+data class ShowToast(val message: String) : ViewModelCommand
 
 
