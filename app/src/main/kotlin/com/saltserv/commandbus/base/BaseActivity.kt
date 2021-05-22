@@ -3,6 +3,7 @@ package com.saltserv.commandbus.base
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,16 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         viewModelCommandsSubscription.dispose()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     open fun handleViewModelCommand(command: ViewModelCommand): Boolean {
