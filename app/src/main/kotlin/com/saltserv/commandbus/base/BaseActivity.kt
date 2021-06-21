@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.saltserv.commandbus.CloseKeyboard
 import com.saltserv.commandbus.CloseScreen
-import com.saltserv.commandbus.ToastCommand
+import com.saltserv.commandbus.ShowToast
 import com.saltserv.commandbus.ViewModelCommand
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -54,7 +54,7 @@ abstract class BaseActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     open fun handleViewModelCommand(command: ViewModelCommand): Boolean {
         when (command) {
-            is ToastCommand -> Toast.makeText(this, command.message, Toast.LENGTH_LONG).show()
+            is ShowToast -> Toast.makeText(this, command.message, Toast.LENGTH_LONG).show()
             is CloseScreen -> finish()
             is CloseKeyboard -> closeKeyboard()
         }
